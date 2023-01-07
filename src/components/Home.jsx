@@ -49,7 +49,7 @@ export default function Home() {
             className="todo-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyUp={onPressEnter}
+            onKeyPress={onPressEnter}
           />
           <button className="add-button" onClick={onClickAdd}>
             Add

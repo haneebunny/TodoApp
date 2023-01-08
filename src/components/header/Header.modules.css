@@ -1,0 +1,14 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.menu {
+  padding: 5px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.active {
+  background-color: cornflowerblue;
+}

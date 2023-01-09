@@ -1,5 +1,10 @@
 import Home from "./components/home/Home";
+import { LightModeProvider } from "./context/LightModeContext";
 
 export default function Todo() {
-  return <Home />;
+  return (
+    <LightModeProvider>
+      <Home />
+    </LightModeProvider>
+  );
 }

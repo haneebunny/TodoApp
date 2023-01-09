@@ -28,17 +28,16 @@ export default function Item({
         ?.map((item, i) => (
           <div className="todo-li" key={uuidv4()}>
             <input
-              id="todo-checkbox"
+              id={`todo${item.id}`}
               name="checkbox"
               className="todo-checkbox"
               type="checkbox"
               checked={item.done}
-              onChange={onClickCheck(item)}
+              onChange={() => onClickCheck(item)}
             />
-            <label htmlFor="todo-checkbox" className="todo-item">
+            <label htmlFor={`todo${item.id}`} className="todo-item">
               {item.name}
             </label>
-
             <button
               id={item.id}
               className="delete-button"

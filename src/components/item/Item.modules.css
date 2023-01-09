@@ -2,6 +2,7 @@
   display: inline-block;
   position: relative;
   width: 100%;
+  height: 14px;
 }
 
 .todo-li {
@@ -26,24 +27,25 @@
   height: 14px;
   margin-right: 6px;
   font-size: 11px;
+  /* line-height: 0px; */
 }
 
 .todo-checkbox {
+  display: none;
   width: 12px;
-  /* display: none; */
 }
 .todo-checkbox:checked + label {
-  /* content: "💚"; */
   display: inline-block;
   position: relative;
   text-decoration: line-through;
   color: rgb(112, 112, 112);
+  padding: 0px 0px;
 }
 
 .todo-checkbox:checked + label::before {
   content: "🤍";
-  background-color: rgb(113, 140, 67);
-  /* border: none; */
+  border: none;
+  font-size: 5px;
 }
 
 .delete-button {

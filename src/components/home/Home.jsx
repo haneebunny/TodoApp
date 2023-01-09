@@ -1,12 +1,17 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Header from "../header/Header";
 import Item from "../item/Item";
 import "./Home.modules.css";
 import { message } from "antd";
+import { LightModeContext } from "../../context/LightModeContext";
+
+import mokoko from "../../img/mokoko.jpeg";
 
 export default function Home() {
+  const { lightMode } = useContext(LightModeContext);
+
   const [messageApi, contextHolder] = message.useMessage();
 
   const [input, setInput] = useState("");
@@ -30,9 +35,8 @@ export default function Home() {
   };
 
   const onClickAdd = () => {
-    if (activeMenu === "해냈음") {
-      setActiveMenu("전부");
-    }
+    if (input === "") return;
+
     const temp = JSON.parse(localStorage.getItem("todoList") || "[]");
     if (temp.length >= 8) {
       info();
@@ -45,6 +49,9 @@ export default function Home() {
     localStorage.setItem("todoList", JSON.stringify(temp));
     setList([...temp]);
     setInput("");
+    // if (activeMenu === "해냈음") {
+    //   setActiveMenu("전부");
+    // }
   };
 
   const onClickDelete = (id) => {
@@ -61,7 +68,7 @@ export default function Home() {
     }
   };
 
-  const onClickCheck = (item) => (e) => {
+  const onClickCheck = (item) => {
     console.log(item);
     setList(
       list.map((todo) =>
@@ -73,8 +80,8 @@ export default function Home() {
   return (
     <div>
       <div className="wrapper">
-        <div className="todo-wrapper">
-          <img src="img/[로스트아크]노트북모코코.jpeg" alt="mokoko" />
+        <div className={(lightMode ? "light " : "dark ") + "todo-wrapper"}>
+          <img src={mokoko} alt="mokoko" onerror="this.style.display='none'" />
           <div className="header">
             <Header activeMenu={activeMenu} onClickMenu={onClickMenu} />
           </div>

@@ -25,6 +25,10 @@
   position: relative;
 }
 
+/* .light {
+  background-color: rgb(153, 182, 138);
+} */
+
 .todo-wrapper img {
   position: absolute;
   width: 100px;

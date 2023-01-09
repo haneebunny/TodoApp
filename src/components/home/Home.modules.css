@@ -1,93 +1,60 @@
 .body,
 * {
+  font-family: "Humanbumsuk";
   margin: 0px;
 }
 
 .wrapper {
-  /* margin: auto; */
   width: 100%;
   height: 100vh;
-  background-color: rgb(219, 232, 231);
+  background-color: #d4d4d4;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo-wrapper {
-  width: 400px;
-  height: 300px;
-  margin: auto;
-  /* padding: 10px; */
-  border: 1px solid mintcream;
+  width: 350px;
+  height: 320px;
   border-radius: 8px;
+  background-color: #37383a;
+  color: white;
+  box-shadow: 5px 5px 3px 0px #919191;
+  position: relative;
+}
+
+.todo-wrapper img {
+  position: absolute;
+  width: 100px;
+  right: 30px;
+  bottom: 50px;
+  z-index: 0;
 }
 
 .header {
   height: 30px;
-  background-color: rgb(143, 209, 187);
-  border-radius: 5px 5px 0px 0px;
+  background-color: rgb(195, 216, 158);
+  border-radius: 7px 7px 0px 0px;
 }
 
 .todo-list-wrapper {
-  padding: 40px;
+  padding: 15px;
+  font-size: 14px;
 }
 
 .todo-list {
   padding-inline-start: 0px;
 }
 
-.todo-checkbox {
-  background-color: beige;
-  width: 12px;
-}
-
-.todo-li {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  padding: 3px 10px;
-}
-
-.delete-button {
-  background-color: rgb(255, 255, 255);
-  border: none;
-  padding: 0px 5px;
-  border-radius: 5px;
-}
-
-.todo-checkbox:checked + label {
-  display: inline-block;
-  position: relative;
-}
-
-.todo-item {
-  display: inline-block;
-  position: relative;
-}
-
-.todo-checkbox:checked + .todo-item::after {
-  content: "";
-  width: 100%;
-  height: 10px;
-  display: block;
-  background-color: rgba(27, 104, 99, 0.378);
-  position: absolute;
-  top: 5px;
-  left: 0;
-  animation: line 0.3s ease-in-out;
-}
-
-@keyframes line {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
 .todo-input {
+  width: 70%;
+  height: 30px;
   border: none;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
+  color: rgb(113, 140, 67);
 }
 
 .todo-input:focus {
@@ -95,18 +62,25 @@
 }
 
 .add-button {
-  background-color: rgb(105, 212, 200);
+  width: 20%;
+  height: 30px;
+  background-color: rgb(113, 140, 67);
   border: none;
   padding: 5px 5px;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 0px;
 }
 
-.menu {
-  padding: 5px;
-  border-radius: 8px 8px 0px 0px;
-  cursor: pointer;
+.input-wrapper {
+  width: 100%;
+  /* background-color: blue; */
+  position: absolute;
+  bottom: 15px;
 }
 
-.active {
-  background-color: cornflowerblue;
+@font-face {
+  font-family: "Humanbumsuk";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }

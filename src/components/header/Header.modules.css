@@ -1,14 +1,17 @@
 .category {
   display: flex;
   flex-direction: row;
-  gap: 30px;
 }
 
 .menu {
-  padding: 5px;
+  padding: 6px 18px;
   border-radius: 8px 8px 0px 0px;
+  cursor: pointer;
+  color: rgb(113, 140, 67);
 }
 
 .active {
-  background-color: cornflowerblue;
+  background-color: #37383a;
+  color: white;
+  font-weight: 500;
 }

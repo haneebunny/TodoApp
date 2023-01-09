@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import { FaTrashAlt } from "react-icons/fa";
+import "./Item.modules.css";
 
 export default function Item({
   list,
@@ -15,9 +17,9 @@ export default function Item({
     <div>
       {list
         .filter((el) => {
-          if (activeMenu === "All") {
+          if (activeMenu === "전부") {
             return true;
-          } else if (activeMenu === "Doing") {
+          } else if (activeMenu === "하는 중") {
             return el.done === false;
           } else {
             return el.done === true;
@@ -27,6 +29,7 @@ export default function Item({
           <div className="todo-li" key={uuidv4()}>
             <input
               id="todo-checkbox"
+              name="checkbox"
               className="todo-checkbox"
               type="checkbox"
               checked={item.done}
@@ -35,12 +38,13 @@ export default function Item({
             <label htmlFor="todo-checkbox" className="todo-item">
               {item.name}
             </label>
+
             <button
               id={item.id}
               className="delete-button"
-              onClick={(e) => onClickDelete(e.target.id)}
+              onClick={() => onClickDelete(item.id)}
             >
-              X
+              <FaTrashAlt />
             </button>
           </div>
         ))}

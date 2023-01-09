@@ -1,0 +1,87 @@
+.todo-item {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.todo-li {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 5px 0px;
+}
+
+.todo-li label {
+  margin-left: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.todo-li label:before {
+  content: "";
+  display: inline-block;
+  border: 1px solid gray;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  font-size: 11px;
+}
+
+.todo-checkbox {
+  width: 12px;
+  /* display: none; */
+}
+.todo-checkbox:checked + label {
+  /* content: "💚"; */
+  display: inline-block;
+  position: relative;
+  text-decoration: line-through;
+  color: rgb(112, 112, 112);
+}
+
+.todo-checkbox:checked + label::before {
+  content: "🤍";
+  background-color: rgb(113, 140, 67);
+  /* border: none; */
+}
+
+.delete-button {
+  width: 17px;
+  height: 17px;
+  background-color: rgb(112, 112, 112);
+  border: none;
+  padding: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  z-index: 1;
+}
+
+.delete-button > svg {
+  color: white;
+  width: 9px;
+}
+/* .todo-checkbox:checked + .todo-item::after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  display: block;
+  background-color: rgba(185, 212, 210, 0.378);
+  position: absolute;
+  top: 5px;
+  left: 0;
+  animation: line 0.3s ease-in-out;
+} */
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

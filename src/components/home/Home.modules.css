@@ -7,7 +7,7 @@
 .wrapper {
   width: 100%;
   height: 100vh;
-  background-color: #d4d4d4;
+  background-color: var(--color-grey);
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -19,8 +19,8 @@
   width: 350px;
   height: 320px;
   border-radius: 8px;
-  background-color: #37383a;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   box-shadow: 5px 5px 3px 0px #919191;
   position: relative;
 }
@@ -58,7 +58,7 @@
   border: none;
   padding: 5px;
   border-radius: 5px 0px 0px 5px;
-  color: rgb(113, 140, 67);
+  color: var(--color-text-accent);
 }
 
 .todo-input:focus {
@@ -68,7 +68,7 @@
 .add-button {
   width: 20%;
   height: 30px;
-  background-color: rgb(113, 140, 67);
+  background-color: var(--color-text-accent);
   border: none;
   padding: 5px 5px;
   border-radius: 0px 5px 5px 0px;

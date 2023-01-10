@@ -1,13 +1,30 @@
+:root {
+  --color-bg: #37383a;
+  --color-bg-light: rgb(164, 188, 122);
+  --color-grey: #d4d4d4;
+  --color-text: white;
+  --color-text-light: #37383a;
+  --color-text-accent: rgb(113, 140, 67);
+  --heart-done: "🤍";
+}
+
+html.light {
+  --color-bg: #d2dfbf;
+  --color-text: #37383a;
+
+  --heart-done: "💛";
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

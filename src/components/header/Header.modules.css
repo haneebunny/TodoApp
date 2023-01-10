@@ -1,6 +1,8 @@
 .header {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .category {
@@ -12,13 +14,13 @@
   padding: 6px 18px;
   border-radius: 8px 8px 0px 0px;
   cursor: pointer;
-  color: rgb(113, 140, 67);
+  color: var(--color-text-accent);
   height: 100%;
 }
 
 .active {
-  background-color: #37383a;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-weight: 500;
 }
 
@@ -40,4 +42,13 @@
   .active.light {
     background-color: rgb(252, 215, 121);
   }
+}
+
+.button {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
 }

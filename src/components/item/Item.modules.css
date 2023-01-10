@@ -43,7 +43,7 @@
 }
 
 .todo-checkbox:checked + label::before {
-  content: "🤍";
+  content: var(--heart-done);
   border: none;
   font-size: 5px;
 }

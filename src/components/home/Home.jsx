@@ -5,12 +5,14 @@ import Header from "../header/Header";
 import Item from "../item/Item";
 import "./Home.modules.css";
 import { message } from "antd";
-import { LightModeContext } from "../../context/LightModeContext";
 
 import mokoko from "../../img/mokoko.jpeg";
+import heartmokoko from "../../img/heartmokoko.png";
+
+import { useLightMode } from "../../context/LightModeContext";
 
 export default function Home() {
-  const { lightMode } = useContext(LightModeContext);
+  const { lightMode } = useLightMode();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -35,7 +37,7 @@ export default function Home() {
   };
 
   const onClickAdd = () => {
-    if (input === "") return;
+    if (input.trim().length === 0) return;
 
     const temp = JSON.parse(localStorage.getItem("todoList") || "[]");
     if (temp.length >= 8) {
@@ -81,7 +83,11 @@ export default function Home() {
     <div>
       <div className="wrapper">
         <div className={(lightMode ? "light " : "dark ") + "todo-wrapper"}>
-          <img src={mokoko} alt="mokoko" onerror="this.style.display='none'" />
+          <img
+            src={lightMode ? heartmokoko : mokoko}
+            alt="mokoko"
+            onerror="this.style.display='none'"
+          />
           <div className="header">
             <Header activeMenu={activeMenu} onClickMenu={onClickMenu} />
           </div>

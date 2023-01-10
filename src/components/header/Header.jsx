@@ -1,11 +1,13 @@
-import { useContext } from "react";
-import { LightModeContext } from "../../context/LightModeContext";
+import { useLightMode } from "../../context/LightModeContext";
 import "./Header.modules.css";
+import { HiMoon, HiSun } from "react-icons/hi";
 
 const MENUS = ["전부", "하는 중", "해냈음"];
 
 export default function Header({ onClickMenu, activeMenu }) {
-  const { lightMode, toggleLightMode } = useContext(LightModeContext);
+  // const { lightMode, toggleLightMode } = useContext(LightModeContext);
+  const { lightMode, toggleLightMode } = useLightMode();
+
   return (
     <div className="header">
       <div className="category">
@@ -24,7 +26,9 @@ export default function Header({ onClickMenu, activeMenu }) {
           </p>
         ))}
       </div>
-      {/* <button onClick={() => toggleLightMode()}>해달</button> */}
+      <button className="button" onClick={toggleLightMode}>
+        {lightMode ? <HiMoon /> : <HiSun />}
+      </button>
     </div>
   );
 }

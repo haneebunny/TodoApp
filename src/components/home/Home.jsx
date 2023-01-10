@@ -17,7 +17,7 @@ export default function Home() {
   const [messageApi, contextHolder] = message.useMessage();
 
   const [input, setInput] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(() => readTodos());
   const [activeMenu, setActiveMenu] = useState("전부");
 
   useEffect(() => {
@@ -26,6 +26,10 @@ export default function Home() {
       setList(todoList);
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(list));
+  }, [list]);
 
   const info = () => {
     messageApi.info("최대 갯수를 초과하였습니다!😗");
@@ -117,4 +121,9 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+function readTodos() {
+  const todoList = JSON.parse(localStorage.getItem("todoList") || []);
+  return todoList;
 }

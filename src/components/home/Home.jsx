@@ -123,7 +123,13 @@ export default function Home() {
   );
 }
 
+(() => {
+  console.log('hello')
+})();
+
 function readTodos() {
-  const todoList = JSON.parse(localStorage.getItem("todoList") || []);
+  const todoList = JSON.parse((() => {
+    return localStorage.getItem("todoList")? localStorage.getItem("todoList") : '[]';
+  })());
   return todoList;
 }
